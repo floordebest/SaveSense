@@ -8,13 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		4A7398A121A473B9004D3450 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7398A021A473B9004D3450 /* AppDelegate.swift */; };
-		4A7398A321A473B9004D3450 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7398A221A473B9004D3450 /* ViewController.swift */; };
-		4A7398A621A473B9004D3450 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7398A421A473B9004D3450 /* Main.storyboard */; };
 		4A7398A921A473B9004D3450 /* SaveSense.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A7398A721A473B9004D3450 /* SaveSense.xcdatamodeld */; };
 		4A7398AB21A473BA004D3450 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A7398AA21A473BA004D3450 /* Assets.xcassets */; };
 		4A7398AE21A473BA004D3450 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A7398AC21A473BA004D3450 /* LaunchScreen.storyboard */; };
 		4A7398B921A473BA004D3450 /* SaveSenseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7398B821A473BA004D3450 /* SaveSenseTests.swift */; };
 		4A7398C421A473BA004D3450 /* SaveSenseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7398C321A473BA004D3450 /* SaveSenseUITests.swift */; };
+		4A7398D221A47468004D3450 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7398D121A47468004D3450 /* LoginViewController.swift */; };
+		4A7398D921A47549004D3450 /* satelliteIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7398D721A47549004D3450 /* satelliteIcon.png */; };
+		4A7398DA21A47549004D3450 /* watchIconWhiteBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7398D821A47549004D3450 /* watchIconWhiteBackground.png */; };
+		4A7398DC21A4757B004D3450 /* LoginViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7398DB21A4757B004D3450 /* LoginViewControllerLayout.swift */; };
+		4A7398DE21A475AB004D3450 /* customButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7398DD21A475AB004D3450 /* customButton.swift */; };
+		4A7398E121A47736004D3450 /* LoginViewController Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7398E021A47736004D3450 /* LoginViewController Constraints.swift */; };
+		4A7398E321A57F15004D3450 /* LoginCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7398E221A57F15004D3450 /* LoginCardView.swift */; };
+		4A7398E621A57F30004D3450 /* RegisterCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7398E521A57F30004D3450 /* RegisterCardView.swift */; };
+		4A7398E821A5BBCB004D3450 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7398E721A5BBCB004D3450 /* HomeViewController.swift */; };
+		4A7398EB21A6AC3C004D3450 /* deviceDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7398EA21A6AC3C004D3450 /* deviceDataModel.swift */; };
+		4A7398ED21A6ACB5004D3450 /* HomeViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7398EC21A6ACB5004D3450 /* HomeViewControllerLayout.swift */; };
+		4A7398EF21A6AD40004D3450 /* deviceTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7398EE21A6AD40004D3450 /* deviceTableCell.swift */; };
+		4A7398F421A6B276004D3450 /* battery_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7398F021A6B276004D3450 /* battery_empty.png */; };
+		4A7398F521A6B276004D3450 /* battery_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7398F121A6B276004D3450 /* battery_full.png */; };
+		4A7398F621A6B276004D3450 /* battery_half.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7398F221A6B276004D3450 /* battery_half.png */; };
+		4A7398F721A6B276004D3450 /* battery_threequarter.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7398F321A6B276004D3450 /* battery_threequarter.png */; };
+		4A7398F921A82DB8004D3450 /* DeviceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7398F821A82DB8004D3450 /* DeviceDetailViewController.swift */; };
+		4A7398FB21A83007004D3450 /* DeviceDetailViewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7398FA21A83007004D3450 /* DeviceDetailViewControllerLayout.swift */; };
+		4A7398FD21A833AE004D3450 /* DeviceDetailViewControllerConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7398FC21A833AE004D3450 /* DeviceDetailViewControllerConstraints.swift */; };
+		4A7398FF21A83613004D3450 /* Edit_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A7398FE21A83613004D3450 /* Edit_icon.png */; };
+		4A73990421ABFE42004D3450 /* changeNameAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A73990321ABFE42004D3450 /* changeNameAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +56,6 @@
 /* Begin PBXFileReference section */
 		4A73989D21A473B9004D3450 /* SaveSense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaveSense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A7398A021A473B9004D3450 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4A7398A221A473B9004D3450 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4A7398A521A473B9004D3450 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A7398A821A473B9004D3450 /* SaveSense.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SaveSense.xcdatamodel; sourceTree = "<group>"; };
 		4A7398AA21A473BA004D3450 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A7398AD21A473BA004D3450 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +66,27 @@
 		4A7398BF21A473BA004D3450 /* SaveSenseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaveSenseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A7398C321A473BA004D3450 /* SaveSenseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSenseUITests.swift; sourceTree = "<group>"; };
 		4A7398C521A473BA004D3450 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A7398D121A47468004D3450 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4A7398D721A47549004D3450 /* satelliteIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = satelliteIcon.png; sourceTree = "<group>"; };
+		4A7398D821A47549004D3450 /* watchIconWhiteBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = watchIconWhiteBackground.png; sourceTree = "<group>"; };
+		4A7398DB21A4757B004D3450 /* LoginViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerLayout.swift; sourceTree = "<group>"; };
+		4A7398DD21A475AB004D3450 /* customButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButton.swift; sourceTree = "<group>"; };
+		4A7398E021A47736004D3450 /* LoginViewController Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController Constraints.swift"; sourceTree = "<group>"; };
+		4A7398E221A57F15004D3450 /* LoginCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCardView.swift; sourceTree = "<group>"; };
+		4A7398E521A57F30004D3450 /* RegisterCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCardView.swift; sourceTree = "<group>"; };
+		4A7398E721A5BBCB004D3450 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4A7398EA21A6AC3C004D3450 /* deviceDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deviceDataModel.swift; sourceTree = "<group>"; };
+		4A7398EC21A6ACB5004D3450 /* HomeViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerLayout.swift; sourceTree = "<group>"; };
+		4A7398EE21A6AD40004D3450 /* deviceTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deviceTableCell.swift; sourceTree = "<group>"; };
+		4A7398F021A6B276004D3450 /* battery_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battery_empty.png; sourceTree = "<group>"; };
+		4A7398F121A6B276004D3450 /* battery_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battery_full.png; sourceTree = "<group>"; };
+		4A7398F221A6B276004D3450 /* battery_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battery_half.png; sourceTree = "<group>"; };
+		4A7398F321A6B276004D3450 /* battery_threequarter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battery_threequarter.png; sourceTree = "<group>"; };
+		4A7398F821A82DB8004D3450 /* DeviceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailViewController.swift; sourceTree = "<group>"; };
+		4A7398FA21A83007004D3450 /* DeviceDetailViewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailViewControllerLayout.swift; sourceTree = "<group>"; };
+		4A7398FC21A833AE004D3450 /* DeviceDetailViewControllerConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailViewControllerConstraints.swift; sourceTree = "<group>"; };
+		4A7398FE21A83613004D3450 /* Edit_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Edit_icon.png; sourceTree = "<group>"; };
+		4A73990321ABFE42004D3450 /* changeNameAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeNameAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +137,13 @@
 		4A73989F21A473B9004D3450 /* SaveSense */ = {
 			isa = PBXGroup;
 			children = (
+				4A7398E921A6AC29004D3450 /* Models */,
+				4A7398DF21A4770A004D3450 /* Constraints */,
+				4A7398D621A47530004D3450 /* Images */,
+				4A7398D521A47522004D3450 /* ViewControllers */,
+				4A7398D421A47518004D3450 /* Classes */,
+				4A7398D321A4750B004D3450 /* Extensions */,
 				4A7398A021A473B9004D3450 /* AppDelegate.swift */,
-				4A7398A221A473B9004D3450 /* ViewController.swift */,
-				4A7398A421A473B9004D3450 /* Main.storyboard */,
-				4A7398AA21A473BA004D3450 /* Assets.xcassets */,
 				4A7398AC21A473BA004D3450 /* LaunchScreen.storyboard */,
 				4A7398AF21A473BA004D3450 /* Info.plist */,
 				4A7398A721A473B9004D3450 /* SaveSense.xcdatamodeld */,
@@ -126,6 +167,86 @@
 				4A7398C521A473BA004D3450 /* Info.plist */,
 			);
 			path = SaveSenseUITests;
+			sourceTree = "<group>";
+		};
+		4A7398D321A4750B004D3450 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4A7398DB21A4757B004D3450 /* LoginViewControllerLayout.swift */,
+				4A7398EC21A6ACB5004D3450 /* HomeViewControllerLayout.swift */,
+				4A7398FA21A83007004D3450 /* DeviceDetailViewControllerLayout.swift */,
+				4A7398E421A57F1A004D3450 /* CardViews */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4A7398D421A47518004D3450 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4A7398DD21A475AB004D3450 /* customButton.swift */,
+				4A7398EE21A6AD40004D3450 /* deviceTableCell.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4A7398D521A47522004D3450 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A7398D121A47468004D3450 /* LoginViewController.swift */,
+				4A7398E721A5BBCB004D3450 /* HomeViewController.swift */,
+				4A7398F821A82DB8004D3450 /* DeviceDetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4A7398D621A47530004D3450 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4A7398D721A47549004D3450 /* satelliteIcon.png */,
+				4A7398FE21A83613004D3450 /* Edit_icon.png */,
+				4A7398F021A6B276004D3450 /* battery_empty.png */,
+				4A7398F121A6B276004D3450 /* battery_full.png */,
+				4A7398F221A6B276004D3450 /* battery_half.png */,
+				4A7398F321A6B276004D3450 /* battery_threequarter.png */,
+				4A7398D821A47549004D3450 /* watchIconWhiteBackground.png */,
+				4A7398AA21A473BA004D3450 /* Assets.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		4A7398DF21A4770A004D3450 /* Constraints */ = {
+			isa = PBXGroup;
+			children = (
+				4A7398E021A47736004D3450 /* LoginViewController Constraints.swift */,
+				4A7398FC21A833AE004D3450 /* DeviceDetailViewControllerConstraints.swift */,
+			);
+			path = Constraints;
+			sourceTree = "<group>";
+		};
+		4A7398E421A57F1A004D3450 /* CardViews */ = {
+			isa = PBXGroup;
+			children = (
+				4A7398E221A57F15004D3450 /* LoginCardView.swift */,
+				4A7398E521A57F30004D3450 /* RegisterCardView.swift */,
+			);
+			path = CardViews;
+			sourceTree = "<group>";
+		};
+		4A7398E921A6AC29004D3450 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4A73990221ABFE2E004D3450 /* Alerts */,
+				4A7398EA21A6AC3C004D3450 /* deviceDataModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4A73990221ABFE2E004D3450 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				4A73990321ABFE42004D3450 /* changeNameAlert.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,9 +353,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A7398DA21A47549004D3450 /* watchIconWhiteBackground.png in Resources */,
+				4A7398F721A6B276004D3450 /* battery_threequarter.png in Resources */,
+				4A7398F421A6B276004D3450 /* battery_empty.png in Resources */,
 				4A7398AE21A473BA004D3450 /* LaunchScreen.storyboard in Resources */,
+				4A7398D921A47549004D3450 /* satelliteIcon.png in Resources */,
+				4A7398F621A6B276004D3450 /* battery_half.png in Resources */,
+				4A7398FF21A83613004D3450 /* Edit_icon.png in Resources */,
+				4A7398F521A6B276004D3450 /* battery_full.png in Resources */,
 				4A7398AB21A473BA004D3450 /* Assets.xcassets in Resources */,
-				4A7398A621A473B9004D3450 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +386,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A7398DC21A4757B004D3450 /* LoginViewControllerLayout.swift in Sources */,
+				4A7398D221A47468004D3450 /* LoginViewController.swift in Sources */,
+				4A7398F921A82DB8004D3450 /* DeviceDetailViewController.swift in Sources */,
+				4A7398FB21A83007004D3450 /* DeviceDetailViewControllerLayout.swift in Sources */,
+				4A7398E321A57F15004D3450 /* LoginCardView.swift in Sources */,
+				4A7398EB21A6AC3C004D3450 /* deviceDataModel.swift in Sources */,
+				4A7398EF21A6AD40004D3450 /* deviceTableCell.swift in Sources */,
+				4A7398ED21A6ACB5004D3450 /* HomeViewControllerLayout.swift in Sources */,
+				4A7398E621A57F30004D3450 /* RegisterCardView.swift in Sources */,
+				4A7398FD21A833AE004D3450 /* DeviceDetailViewControllerConstraints.swift in Sources */,
+				4A7398E121A47736004D3450 /* LoginViewController Constraints.swift in Sources */,
+				4A7398E821A5BBCB004D3450 /* HomeViewController.swift in Sources */,
 				4A7398A921A473B9004D3450 /* SaveSense.xcdatamodeld in Sources */,
-				4A7398A321A473B9004D3450 /* ViewController.swift in Sources */,
 				4A7398A121A473B9004D3450 /* AppDelegate.swift in Sources */,
+				4A7398DE21A475AB004D3450 /* customButton.swift in Sources */,
+				4A73990421ABFE42004D3450 /* changeNameAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +437,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4A7398A421A473B9004D3450 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4A7398A521A473B9004D3450 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4A7398AC21A473BA004D3450 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
