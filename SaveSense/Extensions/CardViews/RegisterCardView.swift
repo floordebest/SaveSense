@@ -11,6 +11,7 @@ import UIKit
 
 extension LoginViewController {
     
+    // Function to load the register view
     func setupRegisterView() {
         view.addSubview(registerCardView)
         view.addSubview(registerTopTextLabel)
@@ -56,6 +57,7 @@ extension LoginViewController {
         
     }
     
+    // Function to put all the register data on screen
     func setupRegisterViewConstraints() {
         registerCardView.translatesAutoresizingMaskIntoConstraints = false
         

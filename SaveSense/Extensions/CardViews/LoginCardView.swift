@@ -11,6 +11,7 @@ import UIKit
 
 extension LoginViewController {
     
+    // Function to load the login View
     func setupLoginCardView() {
     view.addSubview(loginCardView)
     view.addSubview(loginTopTextLabel)
@@ -60,12 +61,12 @@ extension LoginViewController {
     setupLoginViewConstraints()
     }
     
+    // Function to put all the login data on screen
     func setupLoginViewConstraints() {
         loginCardView.translatesAutoresizingMaskIntoConstraints = false
         loginCardView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
         loginCardView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
         loginCardView.heightAnchor.constraint(equalToConstant: 450).isActive = true
-       // loginCardView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
         
         loginViewBottomConstraint = loginCardView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 700)
         loginViewBottomConstraint.isActive = true
