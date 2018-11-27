@@ -52,67 +52,31 @@ class DeviceDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Load data function
+        // Load device data to populate the view for the selected device
         loadDeviceData()
         
         // Listen for press on cancell button to return to main view
         returnScreenButton.addTarget(self, action: #selector(cancellButtonPressed), for: .touchUpInside)
         
+        // Listen for press on 'edit' button to change the nameLabel of the device (opens a pop up alert)
         deviceNameChangeButton.addTarget(self, action: #selector(changeNameButtonPressed), for: .touchUpInside)
     }
     
-    func loadDeviceData() {
-        
-        // Get device Index nr from memory
-        guard let deviceIndex = UserDefaults.standard.object(forKey: "indexPath") as? Int else {return}
-        
-        // get device data from indexnr
-        let currentDevice = devices[deviceIndex]
-        
-        // Load GPS data for map view
-        let initialLocation = CLLocation(latitude: currentDevice.latGPS, longitude: currentDevice.longGPS)
-        let regionRadius: CLLocationDistance = 500
-        let annotation = MKPointAnnotation()
-        
-        func centerMapOnLocation(location: CLLocation) {
-            let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
-                                                      latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-            annotation.coordinate = CLLocationCoordinate2D(latitude: currentDevice.latGPS, longitude: currentDevice.longGPS)
-            annotation.title = "Laatste positie van \(currentDevice.deviceName)"
-            mapView.setRegion(coordinateRegion, animated: true)
-            mapView.showsUserLocation = true
-            mapView.addAnnotation(annotation)
-        }
-        
-        centerMapOnLocation(location: initialLocation)
-        
-        // Load battery percentage data
-        batteryPercentage = Int(currentDevice.batteryPercentage)!
-        deviceName = currentDevice.deviceName
-        
-        // Set device Name
-        deviceNameLabel.text = deviceName
-        batteryPercentageLabel.text = "\(batteryPercentage)%"
-        deviceSerial = currentDevice.deviceSerial
-        
-        // Load View Layout from extension
-        loadDeviceDetailView()
-    }
-    
+    // Function to handle button press on the cancell button
     @objc func cancellButtonPressed() {
+        
         // Remove device data (indexnr) from memory
         UserDefaults.standard.removeObject(forKey: "indexPath")
         
         // Go back to Main View
-        
         presentingViewController?.dismiss(animated: true, completion: nil)
         
-        //let homeView = HomeViewController()
-        //self.present(homeView, animated: true, completion: nil)
     }
     
+    // Function to handle button press on the 'edit' button
     @objc func changeNameButtonPressed() {
         
+        // Get device Index nr to give data to pop up to change
         guard let deviceIndex = UserDefaults.standard.object(forKey: "indexPath") as? Int else {return}
         
         AlertWithEdit(title: "Verander Naam", buttonTitleDone: "Opslaan", buttonTitleCancell: "Annuleren", textFieldText: deviceName, currentDeviceName: deviceName, deviceIndexPosition: deviceIndex)?.setupAlert(on: self)

@@ -10,6 +10,8 @@ import Foundation
 
 var devices: [Device] = []
 
+
+// Device data that is saved in the database
 class Device {
     
     var deviceSerial: String

@@ -26,14 +26,21 @@ class DeviceCellClass: UITableViewCell {
     
     var deviceSerial = String()
     
-    //var ref: DatabaseReference?
-    
+    // Function to load device data and register it as a device
     func setDevice(device: Device) {
         
+        // Load GPS / Map data
+        
+        // Sets location of the mapview
         let initialLocation = CLLocation(latitude: device.latGPS, longitude: device.longGPS)
+        
+        // Sets radius around the center of the mapview in meters (zoomlevel of the mapview)
         let regionRadius: CLLocationDistance = 50000
+        
+        // Sets an annotation on the locations (pin) to show where it is
         let annotation = MKPointAnnotation()
         
+        // Function to center the view on the gives GPS data
         func centerMapOnLocation(location: CLLocation) {
             let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
                                                       latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
@@ -44,8 +51,10 @@ class DeviceCellClass: UITableViewCell {
             mapView.addAnnotation(annotation)
         }
         
+        // Call the function to center the view on the given GPS Data
         centerMapOnLocation(location: initialLocation)
         
+        // Sets the deviceNameLabel, Batterylabel and device serial number
         deviceNameLabel.text = device.deviceName
         battPercent = Int(device.batteryPercentage)!
         let battsign = "%"
@@ -62,15 +71,17 @@ class DeviceCellClass: UITableViewCell {
         deviceSerial = device.deviceSerial
     }
     
+    // Load the view constraints to put the data on screen
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.contentView.backgroundColor = borderColor
-        self.layer.borderWidth = 5
-        self.layer.borderColor = borderColor.cgColor
-        self.layer.masksToBounds = false
+        // TODO: There is a small white line around the cardview in the corners, find out what it is and how to delete it
+        self.backgroundColor = .clear
         
+        // Loads all the data as a 'cardview' in the cell
         addSubview(cellCardView)
+        
+        // Load all data in the cellCardView
         cellCardView.addSubview(mapView)
         cellCardView.addSubview(deviceNameLabel)
         cellCardView.addSubview(batteryPercentageLabel)
@@ -80,6 +91,9 @@ class DeviceCellClass: UITableViewCell {
         
         cellCardView.backgroundColor = .white
         cellCardView.layer.cornerRadius = 12
+        cellCardView.layer.borderWidth = 5
+        cellCardView.layer.borderColor = borderColor.cgColor
+        cellCardView.layer.masksToBounds = false
 
         mapView.layer.cornerRadius = 20
         
@@ -94,6 +108,7 @@ class DeviceCellClass: UITableViewCell {
             batteryPercentageLabel.textColor = .red
         }
         
+        // Function to create constraints of the cell and put in position on screen
         createCellConstraints()
     }
     
@@ -103,8 +118,10 @@ class DeviceCellClass: UITableViewCell {
     
     func createCellConstraints() {
         
+        // Sets the top position of the total tableview
         self.heightAnchor.constraint(equalToConstant: 250).isActive = true
         
+        // Sets the position of the cardview
         cellCardView.translatesAutoresizingMaskIntoConstraints = false
         cellCardView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         cellCardView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
@@ -122,7 +139,6 @@ class DeviceCellClass: UITableViewCell {
         mapView.heightAnchor.constraint(equalTo: cellCardView.heightAnchor, multiplier: 0.7).isActive = true
         mapView.widthAnchor.constraint(equalTo: cellCardView.widthAnchor, multiplier: 0.45).isActive = true
         mapView.topAnchor.constraint(equalTo: deviceNameLabel.bottomAnchor, constant: 5).isActive = true
-        
         
     }
     

@@ -44,8 +44,6 @@ class LoginViewController: UIViewController {
     var logoViewWidth: NSLayoutConstraint!
     var logoViewHeight: NSLayoutConstraint!
     var logoInCenter: NSLayoutConstraint!
-  
-    //let homeViewController = UIViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +60,7 @@ class LoginViewController: UIViewController {
         registerButton.addTarget(self, action: #selector(registerButtonPressed), for: .touchUpInside)
     }
     
+    // Animates the pop-up of the 'cardview' for login
     func animateShowLoginCardView() {
         setupLoginCardView()
         loginViewBottomConstraint.constant = 200
@@ -70,6 +69,7 @@ class LoginViewController: UIViewController {
         }, completion: nil)
     }
     
+    // Animates the pop-up of the 'cardview' for registering
     func animateShowRegisterCardView() {
         setupRegisterView()
         registerViewCenterConstraint.constant = 0
@@ -78,6 +78,7 @@ class LoginViewController: UIViewController {
         }, completion: nil)
     }
     
+    // Animates the switching between registering and login 'cardview'
     func animateSwitchRegisterAndLogin(from: String) {
         if from == "login" {
             loginViewBottomConstraint.constant = 700
@@ -96,39 +97,57 @@ class LoginViewController: UIViewController {
         }
     }
     
+    // Function when the button is pressed to go to the login 'cardview'
     @objc func toLoginButtonPressed(sender: UIButton!) {
         animateShowLoginCardView()
     }
     
+    // Function when the button is pressed to go to the registering 'cardview'
     @objc func toRegisterButtonPressed(sender: UIButton!){
         animateShowRegisterCardView()
     }
     
+    // Function when someone clicks on the text ('Don't have an account yet..?')on the login cardview to go to register cardview
     @objc func tapRegisterText(sender:UITapGestureRecognizer) {
         animateSwitchRegisterAndLogin(from: "login")
     }
     
+    // Function when someone clicks on the text ('Allready have an account?...') on the register cardview to go to the login cardview
     @objc func tapLoginText(sender:UITapGestureRecognizer) {
         animateSwitchRegisterAndLogin(from: "register")
     }
     
+    // Function when the keyboard is on screen and someone taps around the keyboard to hide the keyboard
     @objc func hideKeyboard(sender:UITapGestureRecognizer) {
         view.endEditing(true)
     }
     
-    @objc func tappert(sender:UITapGestureRecognizer) {
-        quitLoading = true
-        print("clicked screen")
-    }
-    
+    // Function to go to the main view (home view controller) after pushing login button
+    // TODO: Implement Firebase account check on login
     @objc func loginButtonPressed() {
         //Login
         let homeView = HomeViewController()
         self.present(homeView, animated: true, completion: nil)
     }
     
+    // Function to send registered account data to Firebase to create an account
+    // TODO: Implement sending data to firebase, receive account ID and save it to device and go to main screen
     @objc func registerButtonPressed() {
         //Register
     }
 
+    // Function voor demo purpose to get out of the loading screen when the screen is tapped
+    // NOT ACTIVE RIGHT NOW
+    @objc func tappert(sender:UITapGestureRecognizer) {
+        quitLoading = true
+        print("clicked screen")
+    }
+    
+    // Listens if there is a touch on the screen
+    func registerTouch() {
+        let tapper = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.tappert))
+        logoView.isUserInteractionEnabled = true
+        view.addGestureRecognizer(tapper)
+    }
+    
 }

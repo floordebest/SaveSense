@@ -11,6 +11,7 @@ import UIKit
 
 extension LoginViewController {
     
+    // Load Logo
     func setupLogoViewConstraints() {
         logoView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -28,13 +29,19 @@ extension LoginViewController {
         logoInCenter = logoView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         logoInCenter.isActive = true
         
+        // Call to load satellite
         setupSatellite()
+        
+        // Call Function to register Touches
+        // NOT USED RIGHT NOW, ONLY DEMO USE
         registerTouch()
+        
+        // Call Animate function to zoom in on logo as loading screen
         animateLoginLogoZoomIn()
-
         
     }
     
+    // Setup first screen where client can choose to go to login or register for a new account
     func setupLoginRegisterButtonConstraints() {
         toLoginButton.translatesAutoresizingMaskIntoConstraints = false
         toRegisterButton.translatesAutoresizingMaskIntoConstraints = false
@@ -51,6 +58,7 @@ extension LoginViewController {
         
     }
     
+    // Setup satellite image which rotates around the main logo
     func setupSatelliteConstraints() {
         satelliteView.translatesAutoresizingMaskIntoConstraints = false
         satelliteImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -67,47 +75,8 @@ extension LoginViewController {
         
         self.satelliteImageView.transform = CGAffineTransform(rotationAngle: 1.5)
         
+        // Load animation function to rotate satellite around the logo
         rotateSatelliteImage()
     }
     
-    func registerTouch() {
-        let tapper = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.tappert))
-        logoView.isUserInteractionEnabled = true
-        view.addGestureRecognizer(tapper)
-    }
-    
-    func animateLoginLogoZoomIn() {
-        HomeViewController().createDummyData()
-        
-        UIView.animate(withDuration: 3, delay: 0, options: [.beginFromCurrentState, .curveLinear], animations: { () -> Void in
-            self.logoInCenter.isActive = true
-            self.logoView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-            self.satelliteView.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-        }) { finished in
-           //if user is logged in (saved in memory), get device data and save to devicemodel class and load homeViewController. Keep this as loading screen.
-            if devices.count > 0 {
-                let homeView = HomeViewController()
-                self.present(homeView, animated: true, completion: nil)
-            }
-           //if user is not logged in (not saved on device), zoom out to login screen
-        //    if self.quitLoading == true {
-        //        self.animateLoginLogoZoomOut()
-            else {
-            self.animateLoginLogoZoomIn()
-            }
-        }
-    }
-    
-    func animateLoginLogoZoomOut() {
-
-        UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 2, options: .curveEaseOut, animations: {
-            self.logoInCenter.isActive = false
-            self.logoViewTopAnchor.isActive = true
-            self.logoView.transform = CGAffineTransform(scaleX: 1, y: 1)
-            self.satelliteView.transform = CGAffineTransform(scaleX: 1, y: 1)
-            self.loadChooseView()
-            self.view.layoutIfNeeded()
-        }, completion: { (finished: Bool) in
-        })
-    }
 }
