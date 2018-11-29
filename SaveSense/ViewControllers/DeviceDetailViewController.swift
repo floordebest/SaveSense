@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 
 class DeviceDetailViewController: UIViewController {
+  
     
     let logoView                    =   UIImageView()
     let logo: UIImage               =   #imageLiteral(resourceName: "watchIconWhiteBackground.png")
@@ -31,6 +32,9 @@ class DeviceDetailViewController: UIViewController {
     let mapView                     =   MKMapView()
     let requestDeviceGPSButton      =   UIButton()
     
+    var deviceLongGPS               =   Double()
+    var deviceLatGPS                =   Double()
+    
     let turnDeviceOffButton         =   UIButton()
     
     let messageSendTextField        =   UITextField()
@@ -47,11 +51,13 @@ class DeviceDetailViewController: UIViewController {
     var deviceSerial                =   String()
     var batteryPercentage           =   Int()
     var deviceName                  =   String()
-
+    var devicePhoneNumber           =   Int()
+    
+    var data: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         // Load device data to populate the view for the selected device
         loadDeviceData()
         
@@ -60,16 +66,14 @@ class DeviceDetailViewController: UIViewController {
         
         // Listen for press on 'edit' button to change the nameLabel of the device (opens a pop up alert)
         deviceNameChangeButton.addTarget(self, action: #selector(changeNameButtonPressed), for: .touchUpInside)
+        
     }
-    
+        
     // Function to handle button press on the cancell button
     @objc func cancellButtonPressed() {
         
-        // Remove device data (indexnr) from memory
-        UserDefaults.standard.removeObject(forKey: "indexPath")
-        
-        // Go back to Main View
-        presentingViewController?.dismiss(animated: true, completion: nil)
+        // Go back to Main (Home) View
+        self.dismiss(animated: true, completion: nil)
         
     }
     
@@ -77,9 +81,29 @@ class DeviceDetailViewController: UIViewController {
     @objc func changeNameButtonPressed() {
         
         // Get device Index nr to give data to pop up to change
-        guard let deviceIndex = UserDefaults.standard.object(forKey: "indexPath") as? Int else {return}
+        guard let deviceIndex = data else {return}
         
         AlertWithEdit(title: "Verander Naam", buttonTitleDone: "Opslaan", buttonTitleCancell: "Annuleren", textFieldText: deviceName, currentDeviceName: deviceName, deviceIndexPosition: deviceIndex)?.setupAlert(on: self)
+        
+    }
+  
+   
+    // Function to update labels after name change function
+    func updateLabels(data: Int?) {
+        DispatchQueue.main.async {
+        
+        print("Updating Labels")
+        
+        guard let indexNr = data else { return }
+        
+        self.deviceName = devices[indexNr].deviceName
+            var labelChange: String = self.deviceName {
+                didSet {
+                    self.deviceNameLabel.text = self.deviceName
+                }
+            }
+        print("Finished Updating Labels")
+        }
     }
 
 }

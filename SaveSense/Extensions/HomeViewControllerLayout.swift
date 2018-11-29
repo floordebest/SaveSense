@@ -52,11 +52,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     // Listens if a cell gets selected/clicked on and goes to the Device Detail page for that device
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // Saves the index number of the selected to port it to the next page (detailview)
-        UserDefaults.standard.set(indexPath.row, forKey: "indexPath")
-        
-        // Load the next page, where details and functions are of the selected device
+        let deviceIndex = indexPath.row
+
+        // Load the next page, where details and functions are of the selected device and pass on the index nr as 'data'
         let deviceDetailView = DeviceDetailViewController()
+        deviceDetailView.data = deviceIndex
         self.present(deviceDetailView, animated: true, completion: nil)
     }
+    
 }

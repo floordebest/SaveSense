@@ -55,7 +55,7 @@ class AlertWithEdit {
             if self.textFieldText != self.currentDeviceName && self.textFieldText != "" {
                 let index = self.deviceIndexPosition
                 devices[index].deviceName = self.textFieldText
-                print(devices[index].deviceName)
+                DeviceDetailViewController().updateLabels(data: index)
             }
         }))
         

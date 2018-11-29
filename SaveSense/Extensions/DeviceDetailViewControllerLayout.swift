@@ -11,25 +11,31 @@ import UIKit
 import MapKit
 
 extension DeviceDetailViewController {
+      
     
     func loadDeviceData() {
         
-        // Get device Index nr from memory
-        guard let deviceIndex = UserDefaults.standard.object(forKey: "indexPath") as? Int else {return}
+        // Check if 'data' is filled to load all variables else return
+        guard let indexnr = data else { return }
         
-        // get device data from indexnr
-        let currentDevice = devices[deviceIndex]
+        deviceName = devices[data!].deviceName
+        deviceSerial = devices[data!].deviceSerial
+        deviceLongGPS = devices[data!].longGPS
+        deviceLatGPS = devices[data!].latGPS
+        batteryPercentage = Int(devices[data!].batteryPercentage)!
+        devicePhoneNumber = Int(devices[data!].phoneNumber)!
+        
         
         // Load GPS data for map view
-        let initialLocation = CLLocation(latitude: currentDevice.latGPS, longitude: currentDevice.longGPS)
+        let initialLocation = CLLocation(latitude: deviceLatGPS, longitude: deviceLongGPS)
         let regionRadius: CLLocationDistance = 500
         let annotation = MKPointAnnotation()
         
         func centerMapOnLocation(location: CLLocation) {
             let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
                                                       latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-            annotation.coordinate = CLLocationCoordinate2D(latitude: currentDevice.latGPS, longitude: currentDevice.longGPS)
-            annotation.title = "Laatste positie van \(currentDevice.deviceName)"
+            annotation.coordinate = CLLocationCoordinate2D(latitude: deviceLatGPS, longitude: deviceLongGPS)
+            annotation.title = "Laatste positie van \(deviceName)"
             mapView.setRegion(coordinateRegion, animated: true)
             mapView.showsUserLocation = true
             mapView.addAnnotation(annotation)
@@ -37,14 +43,9 @@ extension DeviceDetailViewController {
         
         centerMapOnLocation(location: initialLocation)
         
-        // Load battery percentage data
-        batteryPercentage = Int(currentDevice.batteryPercentage)!
-        deviceName = currentDevice.deviceName
-        
         // Set device Name
         deviceNameLabel.text = deviceName
         batteryPercentageLabel.text = "\(batteryPercentage)%"
-        deviceSerial = currentDevice.deviceSerial
         
         // Load View to put it on screen
         loadDeviceDetailView()
@@ -131,4 +132,5 @@ extension DeviceDetailViewController {
             self.rotateSatelliteImage()
         }
     }
+    
 }

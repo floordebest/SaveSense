@@ -137,6 +137,7 @@
 		4A73989F21A473B9004D3450 /* SaveSense */ = {
 			isa = PBXGroup;
 			children = (
+				4AAC670121AFF74B0083D87F /* Delegates */,
 				4A7398E921A6AC29004D3450 /* Models */,
 				4A7398DF21A4770A004D3450 /* Constraints */,
 				4A7398D621A47530004D3450 /* Images */,
@@ -247,6 +248,13 @@
 				4A73990321ABFE42004D3450 /* changeNameAlert.swift */,
 			);
 			path = Alerts;
+			sourceTree = "<group>";
+		};
+		4AAC670121AFF74B0083D87F /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
